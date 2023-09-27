@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private VariableJoystick varJoy;
+    [SerializeField] private VariableJoystick varJoy;//A variavel do Joystick mobile
     private Rigidbody2D rig;
     void Start()
     {
@@ -21,7 +21,7 @@ public class PlayerMove : MonoBehaviour
     {
         float xAxis = varJoy.Horizontal * speed * Time.fixedDeltaTime;
         float yAxis = varJoy.Vertical * speed * Time.fixedDeltaTime;
-        rig.velocity = new Vector2(xAxis, yAxis);
+        rig.velocity = new Vector2(xAxis, yAxis);//Pegando os valores da horizontal e da vertical do joystick e passando eles na velocidade do Player
 
         if (xAxis > 0)
         {
