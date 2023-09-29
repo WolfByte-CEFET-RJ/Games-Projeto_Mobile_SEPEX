@@ -5,14 +5,19 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [Header("ActualTargetSetters")]
-    [SerializeField] private LayerMask enemyLayer;
+    //[SerializeField] private LayerMask enemyLayer;
     private Transform target;//Em quem a arma vai focar 
     
 
     [Header("Weapon configs")]
     [SerializeField] private float weaponRadius;
-
     [SerializeField] private bool isRanged;
+    [SerializeField] private float fireRate;
+    private float cronometer;
+
+    [Header("ShootConfigs")]
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject bullet;
 
     void Start()
     {
@@ -32,9 +37,9 @@ public class Weapon : MonoBehaviour
             //a variavel shortDistance e a target
             foreach (GameObject e in enemies)
             {
-                float distance = Mathf.Abs(Vector3.Distance(transform.position, e.transform.position));
+                float distance = Vector3.Distance(transform.position, e.transform.position);
                 
-                if(distance < shortDistance && distance <=weaponRadius)
+                if(distance < shortDistance && distance <= weaponRadius)
                 {
                     shortDistance = distance;
                     near = e.transform;
@@ -51,20 +56,45 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!target)
-            return;
-
-        transform.up = (Vector2)(target.position - transform.position);
-        if (isRanged)
+        if(cronometer < fireRate + 1)//Se cronometro for menor que fireRate+1(o +1 e apenas uma garantia), o cronometer estara contando como um relogio msm
         {
-            //Metodos para armas ranged
+            cronometer += Time.deltaTime;
+        }
+
+        if (!target)//Se o alvo for nulo, paro a leitura do update por aqui mesmo
+            return;
+        transform.up = (Vector2)(target.position - transform.position);
+        if (cronometer >= fireRate)//Se cronometer for maior que fireRate, atiro e reinicio a variavel cronometer
+        {
+            if (isRanged)
+            {
+                CreateBullet();
+                //Metodos para armas ranged
+            }
+            else
+            {
+                //Metodos para armas melee
+            }
+            cronometer = 0;
+        }   
+        
+    }
+    void CreateBullet()
+    {
+        GameObject g = Instantiate(bullet, firePoint.position, transform.rotation);
+        if(g.GetComponent<BulletFather>())
+        {
+            g.GetComponent<BulletFather>().GetTarget(target);
         }
         else
         {
-            //Metodos para armas melee
+            Debug.LogError("Não referenciou nada errado não, colega?\nCertifique-se que o GameObject bullet possui um componente BulletFather");
         }
+        //else if(g.GetComponent<Rocket>())
+        //{
+        //    g.GetComponent<Rocket>().GetTarget
+        //}
     }
-
     void OnDrawGizmos()//Permite visualizar onde o colisor sera criado
     {
         Gizmos.DrawWireSphere(transform.position, weaponRadius);
