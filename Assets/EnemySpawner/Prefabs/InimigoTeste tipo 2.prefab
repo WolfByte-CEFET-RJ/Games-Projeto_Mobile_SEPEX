@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3565212111899806182}
   - component: {fileID: 3565212111899806177}
   - component: {fileID: 3565212111899806176}
+  - component: {fileID: -9036409117494076749}
   m_Layer: 0
   m_Name: InimigoTeste tipo 2
   m_TagString: Enemy
@@ -101,3 +102,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &-9036409117494076749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3565212111899806179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4869da6e55022364186c60b9d54875e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 10

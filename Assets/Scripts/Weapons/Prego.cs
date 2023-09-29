@@ -19,7 +19,10 @@ public class Prego : BulletFather
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Metodo de tirar vida do inimigo");
+            if(collision.gameObject.GetComponent<LifeSystem>())
+            {
+                collision.gameObject.GetComponent<LifeSystem>().OnDamage(damage);
+            }
             Destroy(gameObject);
         }
     }

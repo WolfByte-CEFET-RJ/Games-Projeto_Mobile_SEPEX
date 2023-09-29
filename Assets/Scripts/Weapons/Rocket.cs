@@ -20,13 +20,16 @@ public class Rocket : BulletFather
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Metodo para tirar vida do inimigo()");
-            if(!isExploded)
+            if (collision.gameObject.GetComponent<LifeSystem>())
+            {
+                collision.gameObject.GetComponent<LifeSystem>().OnDamage(damage);
+            }
+            if (!isExploded)
             {
                 rig.velocity = Vector2.zero;
                 GetComponent<Animator>().Play("RocketExplosion");//O foguete ira explodir a partir dessa animacao
                 isExploded = true;//Para garantir que ele exploda apenas uma vez
-                damage *= 0.80f;//E quem for pego na explosao, vai perder menos vida que quem foi atingido pelo foguete
+                damage = (int)(damage * 0.75f);//E quem for pego na explosao, vai perder menos vida que quem foi atingido pelo foguete
             }
             
         }
