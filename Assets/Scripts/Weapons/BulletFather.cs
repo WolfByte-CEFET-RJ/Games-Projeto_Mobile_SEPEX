@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletFather : MonoBehaviour
 {
     [SerializeField] protected float speed;
-    [SerializeField] protected float damage;
+    [SerializeField] protected int damage;
     protected Transform target;
     protected Rigidbody2D rig;
     protected bool isRocket;
