@@ -8,6 +8,7 @@ public class CameraFollow : MonoBehaviour
     
     public void FixedUpdate()
     {
-        transform.position = Vector2.Lerp(transform.position, player.position, 0.2f);
+        if(player)
+            transform.position = Vector2.Lerp(transform.position, player.position, 0.2f);
     }
 }

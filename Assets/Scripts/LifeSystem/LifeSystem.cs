@@ -1,22 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LifeSystem : MonoBehaviour
 {
-    [SerializeField] private int maxLife;
-    private int currentLife;
+    [SerializeField] private int currentLife;
+    private int maxLife;
+
+    private enum typeLife
+    {
+        commonEnemy,
+        player,
+        boss
+    };
+    [SerializeField] private typeLife currentType;
+    [SerializeField] private Image lifeBar;
     void Start()
     {
-        currentLife = maxLife;
+        maxLife = currentLife;
     }
 
     public void OnDamage(int dmg)
     {
+        
         currentLife -= dmg;
-        if(currentLife <= 0)//Fazer um if pra checar se e player(game over)/inimigo (so morre)/boss(fim da wave)
+        if (currentType == typeLife.player)
         {
-            Destroy(gameObject);
+            lifeBar.fillAmount = (float)currentLife / maxLife;
+            Debug.Log("teste");
+        }
+        if (currentLife <= 0)//Fazer um if pra checar se e player(game over)/inimigo (so morre)/boss(fim da wave)
+        {
+            if (currentType == typeLife.commonEnemy)
+            {
+                Destroy(gameObject);
+            }
+            else if(currentType == typeLife.player)
+            {
+                GameOver.onGameOver();
+                //Animacao de morte??
+                Destroy(gameObject);//So lembrando: Em caso de anim de morte: Destroy(gameObject, tempo da anim);
+            }
+            else
+            {
+                //Fim da horda
+            }
         }
     }
 }

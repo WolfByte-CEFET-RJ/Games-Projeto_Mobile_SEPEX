@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3565212111899806177}
   - component: {fileID: 3565212111899806176}
   - component: {fileID: -9036409117494076749}
+  - component: {fileID: 3480606596253826639}
   m_Layer: 0
   m_Name: InimigoTeste tipo 2
   m_TagString: Enemy
@@ -115,3 +116,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLife: 10
+  currentType: 0
+--- !u!114 &3480606596253826639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3565212111899806179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb7bb31d0e447a42ba94895a52fbbfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

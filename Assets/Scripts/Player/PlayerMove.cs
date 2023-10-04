@@ -7,9 +7,11 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private VariableJoystick varJoy;//A variavel do Joystick mobile
     private Rigidbody2D rig;
+    private SpriteRenderer sprite;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -25,11 +27,11 @@ public class PlayerMove : MonoBehaviour
 
         if (xAxis > 0)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            sprite.flipX = false;
         }
         else if (xAxis < 0)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            sprite.flipX = true;
         }
     }
 }
