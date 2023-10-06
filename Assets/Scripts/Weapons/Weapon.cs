@@ -15,13 +15,22 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float fireRate;
     private float cronometer;
 
-    [Header("ShootConfigs")]
+    [Header("ShootConfigs (Ranged)")]
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bullet;
 
+    [Header("AttackCongigs (Melee)")]
+    [SerializeField] private int damage;
+    [SerializeField] private float knockbackForce;
+    private Animator anim;
+    private Transform player;
+    //private bool isAttacking;
+
     void Start()
     {
-        InvokeRepeating("SearchTarget", 0f, 0.5f);
+        InvokeRepeating("SearchTarget", 0f, 0.25f);     
+        anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void SearchTarget()
@@ -73,10 +82,16 @@ public class Weapon : MonoBehaviour
             }
             else
             {
+                BalanceWeapon();
                 //Metodos para armas melee
             }
             cronometer = 0;
         }   
+        
+    }
+    void BalanceWeapon()
+    {
+        anim.SetTrigger("hit");
         
     }
     void CreateBullet()
@@ -95,7 +110,25 @@ public class Weapon : MonoBehaviour
         //    g.GetComponent<Rocket>().GetTarget
         //}
     }
-    void OnDrawGizmos()//Permite visualizar onde o colisor sera criado
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(!isRanged && collision.gameObject.tag=="Enemy")
+        {
+            if (collision.gameObject.GetComponent<LifeSystem>() && collision.gameObject.GetComponent<EnemyFollow>())
+            {
+                collision.gameObject.GetComponent<LifeSystem>().OnDamage(damage);
+                StartCoroutine(KnockBack(collision.gameObject.GetComponent<EnemyFollow>()));
+            }
+        }
+    }
+    IEnumerator KnockBack(EnemyFollow e)
+    {
+        e.SetOnDamage(true);
+        yield return new WaitForSeconds(fireRate);
+        e.SetOnDamage(false);
+    }
+    
+    void OnDrawGizmosSelected()//Permite visualizar onde o colisor sera criado
     {
         Gizmos.DrawWireSphere(transform.position, weaponRadius);
     }

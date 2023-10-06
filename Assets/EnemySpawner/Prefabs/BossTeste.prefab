@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4869da6e55022364186c60b9d54875e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLife: 0
+  currentLife: 15
   currentType: 0
   lifeBar: {fileID: 0}
 --- !u!114 &-5120670229520420683
