@@ -7,7 +7,8 @@ public class Weapon : MonoBehaviour
     [Header("ActualTargetSetters")]
     //[SerializeField] private LayerMask enemyLayer;
     private Transform target;//Em quem a arma vai focar 
-    
+
+
 
     [Header("Weapon configs")]
     [SerializeField] private float weaponRadius;
@@ -26,9 +27,161 @@ public class Weapon : MonoBehaviour
     private Transform player;
     //private bool isAttacking;
 
+    private int critic;
+
+    public int criticChance;
+    void critico()
+    {
+        critic = Random.Range(1, 100);
+        if (criticChance == 5)
+        {
+            if (critic <= 5)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 10)
+        {
+            if (critic <= 10)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 15)
+        {
+            if (critic <= 15)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 20)
+        {
+            if (critic <= 20)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 25)
+        {
+            if (critic <= 25)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 30)
+        {
+            if (critic <= 30)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 35)
+        {
+            if (critic <= 35)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 40)
+        {
+            if (critic <= 40)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 45)
+        {
+            if (critic <= 45)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 50)
+        {
+            if (critic <= 50)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 55)
+        {
+            if (critic <= 55)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 60)
+        {
+            if (critic <= 60)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 65)
+        {
+            if (critic <= 65)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 70)
+        {
+            if (critic <= 70)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 75)
+        {
+            if (critic <= 75)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 80)
+        {
+            if (critic <= 80)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 85)
+        {
+            if (critic <= 85)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 90)
+        {
+            if (critic <= 90)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 95)
+        {
+            if (critic <= 95)
+            {
+                critic = 1;
+            }
+        }
+        if (criticChance == 100)
+        {
+            if (critic <= 100)
+            {
+                critic = 1;
+            }
+        }
+        if (critic == 1)
+        {
+            damage = damage * Random.Range(2, 15);
+        }
+    }
+
     void Start()
     {
-        InvokeRepeating("SearchTarget", 0f, 0.25f);     
+        InvokeRepeating("SearchTarget", 0f, 0.25f);
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -36,7 +189,7 @@ public class Weapon : MonoBehaviour
     void SearchTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(enemies != null)
+        if (enemies != null)
         {
             float shortDistance = Mathf.Infinity;
             Transform near = null;
@@ -47,8 +200,8 @@ public class Weapon : MonoBehaviour
             foreach (GameObject e in enemies)
             {
                 float distance = Vector3.Distance(transform.position, e.transform.position);
-                
-                if(distance < shortDistance && distance <= weaponRadius)
+
+                if (distance < shortDistance && distance <= weaponRadius)
                 {
                     shortDistance = distance;
                     near = e.transform;
@@ -65,7 +218,7 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(cronometer < fireRate + 1)//Se cronometro for menor que fireRate+1(o +1 e apenas uma garantia), o cronometer estara contando como um relogio msm
+        if (cronometer < fireRate + 1)//Se cronometro for menor que fireRate+1(o +1 e apenas uma garantia), o cronometer estara contando como um relogio msm
         {
             cronometer += Time.deltaTime;
         }
@@ -86,8 +239,12 @@ public class Weapon : MonoBehaviour
                 //Metodos para armas melee
             }
             cronometer = 0;
-        }   
-        
+        }
+
+    }
+    void resetar()
+    {
+        damage = 1;
     }
     void BalanceWeapon()
     {
@@ -116,8 +273,10 @@ public class Weapon : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<LifeSystem>() && collision.gameObject.GetComponent<EnemyFollow>())
             {
+                critico();
                 collision.gameObject.GetComponent<LifeSystem>().OnDamage(damage);
                 StartCoroutine(KnockBack(collision.gameObject.GetComponent<EnemyFollow>()));
+                resetar();
             }
         }
     }

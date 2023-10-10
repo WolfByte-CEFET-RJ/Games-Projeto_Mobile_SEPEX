@@ -8,6 +8,8 @@ public class LifeSystem : MonoBehaviour
     [SerializeField] private int currentLife;
     private int maxLife;
 
+
+    public GameObject damageText;
     private enum typeLife
     {
         commonEnemy,
@@ -20,11 +22,17 @@ public class LifeSystem : MonoBehaviour
     {
         maxLife = currentLife;
     }
-
+    
     public void OnDamage(int dmg)
     {
         
         currentLife -= dmg;
+        if(damageText!= null)
+        {
+            string dano = dmg.ToString();
+            var damage = Instantiate(damageText, transform.position, Quaternion.identity);
+            damage.SendMessage("SetText", dano);
+        }
         if (currentType == typeLife.player)
         {
             lifeBar.fillAmount = (float)currentLife / maxLife;
