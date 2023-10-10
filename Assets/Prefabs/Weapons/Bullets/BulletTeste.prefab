@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 215
   damage: 1
+  criticChance: 20
