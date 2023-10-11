@@ -24,7 +24,13 @@ public class WaveSpawner : MonoBehaviour
     int t = 0;
     private bool canSpawn=true;
     private float nextSpawnTime;
-    
+
+    [SerializeField] private Animator anim;
+    private LifeSystem playerLife;
+    private void Start()
+    {
+        playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<LifeSystem>();
+    }
     private void Update()
     {
         currentWave = waves[currentWaveNumber];
@@ -42,6 +48,8 @@ public class WaveSpawner : MonoBehaviour
         if (t == 0)
         {
             botao.SetActive(true);
+            playerLife.ResetLife();//Recuperar vida automaticamente
+            anim.Play("ShopEnter");
             t++;
         }
         
@@ -49,6 +57,7 @@ public class WaveSpawner : MonoBehaviour
     void OffBot()
     {
         botao.SetActive(false);
+        anim.Play("ShopExit");
     }
     void SpawnNextWave()
     {

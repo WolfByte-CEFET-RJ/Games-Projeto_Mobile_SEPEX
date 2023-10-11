@@ -442,6 +442,7 @@ MonoBehaviour:
   botao: {fileID: 1318468723}
   timer: {fileID: 1542388318}
   x: {fileID: 1542388320}
+  anim: {fileID: 1618938652}
 --- !u!4 &182941475
 Transform:
   m_ObjectHideFlags: 0
@@ -2885,6 +2886,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318468723}
   m_CullTransparentMesh: 1
+--- !u!1 &1329312951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1329312953}
+  - component: {fileID: 1329312952}
+  m_Layer: 0
+  m_Name: ShopController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1329312952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329312951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc36d0c6a5813048a8ff06a3d6d2cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusBar:
+  - {fileID: 21300000, guid: 6faa5197b9c87a8409416004ea83b9d7, type: 3}
+  - {fileID: 21300000, guid: e981300eaa53e054f9180ee23c579dad, type: 3}
+  - {fileID: 21300000, guid: 977245fbb42c9e245b4a7a65b5935f88, type: 3}
+  - {fileID: 21300000, guid: 965920dd7f743b8499ef542afc666d05, type: 3}
+  - {fileID: 21300000, guid: 9a812dba70475024082dde633f2ac20c, type: 3}
+  - {fileID: 21300000, guid: 222e521323d838e408d61184b40e14e6, type: 3}
+--- !u!4 &1329312953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329312951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 934.6897, y: 643.1347, z: 0.58320326}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1385132575
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,7 +3242,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1487599991}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1329312952}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: UpdateCriticAtribute
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2065901109}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1487599991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3343,7 +3407,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541973425}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1329312952}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: UpdateRangeAtribite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1084019497}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1541973425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3596,7 +3672,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1602865045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1329312952}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: UpdateSpeedAtribute
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 165395349}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1602865045
 MonoBehaviour:
   m_ObjectHideFlags: 0

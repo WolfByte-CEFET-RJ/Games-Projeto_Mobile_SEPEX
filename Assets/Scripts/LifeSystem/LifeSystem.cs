@@ -22,7 +22,11 @@ public class LifeSystem : MonoBehaviour
     {
         maxLife = currentLife;
     }
-    
+    public void ResetLife()
+    {
+        currentLife = maxLife;
+        lifeBar.fillAmount = (float)currentLife / maxLife;
+    }
     public void OnDamage(int dmg)
     {
         

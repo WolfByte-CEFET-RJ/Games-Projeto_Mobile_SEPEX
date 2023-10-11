@@ -262,10 +262,7 @@ public class Weapon : MonoBehaviour
         {
             Debug.LogError("Não referenciou nada errado não, colega?\nCertifique-se que o GameObject bullet possui um componente BulletFather");
         }
-        //else if(g.GetComponent<Rocket>())
-        //{
-        //    g.GetComponent<Rocket>().GetTarget
-        //}
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -274,8 +271,12 @@ public class Weapon : MonoBehaviour
             if (collision.gameObject.GetComponent<LifeSystem>() && collision.gameObject.GetComponent<EnemyFollow>())
             {
                 critico();
-                collision.gameObject.GetComponent<LifeSystem>().OnDamage(damage);
-                StartCoroutine(KnockBack(collision.gameObject.GetComponent<EnemyFollow>()));
+                EnemyFollow e = collision.gameObject.GetComponent<EnemyFollow>();
+                if(!e.GetOnDamage())
+                {
+                    collision.gameObject.GetComponent<LifeSystem>().OnDamage(damage);
+                    StartCoroutine(KnockBack(e));
+                }               
                 resetar();
             }
         }

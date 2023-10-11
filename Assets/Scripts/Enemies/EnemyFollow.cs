@@ -8,6 +8,7 @@ public class EnemyFollow : MonoBehaviour
     private Transform Target;
     private bool onDamage;
     public void SetOnDamage(bool b) { onDamage = b; }
+    public bool GetOnDamage() { return onDamage; }
     void Start()
     {
         if(GameObject.FindGameObjectWithTag("Player") != null)
