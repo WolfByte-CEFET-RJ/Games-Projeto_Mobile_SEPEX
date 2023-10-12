@@ -20,7 +20,7 @@ public class EnemyFollow : MonoBehaviour
     {
         if (Target && !onDamage)
             transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
-        else if (onDamage)
-            transform.position = Vector2.MoveTowards(transform.position, Target.position, -Speed * 1.25f * Time.deltaTime);
+        else if (Target && onDamage)
+            transform.position = Vector2.MoveTowards(transform.position, Target.position, -Speed * 1.2f * Time.deltaTime);
     }
 }

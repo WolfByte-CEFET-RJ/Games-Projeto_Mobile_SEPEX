@@ -118,8 +118,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLife: 15
   damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}
-  currentType: 0
+  currentType: 2
   lifeBar: {fileID: 0}
+  coin: {fileID: 0}
 --- !u!114 &-5120670229520420683
 MonoBehaviour:
   m_ObjectHideFlags: 0

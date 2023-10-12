@@ -29,7 +29,11 @@ public class Weapon : MonoBehaviour
 
     private int critic;
 
-    public int criticChance;
+    [SerializeField] private int criticChance;
+
+    public float WeaponRadius { get => weaponRadius; set => weaponRadius = value; }
+    public int CriticChance { get => criticChance; set => criticChance = value; }
+
     void critico()
     {
         critic = Random.Range(1, 100);
@@ -175,7 +179,7 @@ public class Weapon : MonoBehaviour
             }
         }
 */
-        critic = critic <= criticChance ? 1 : 0;//Versao lowCode para chance de critico
+        critic = critic <= CriticChance ? 1 : 0;//Versao lowCode para chance de critico
         if (critic == 1)
         {
             damage = damage * Random.Range(2, 15);
@@ -204,7 +208,7 @@ public class Weapon : MonoBehaviour
             {
                 float distance = Vector3.Distance(transform.position, e.transform.position);
 
-                if (distance < shortDistance && distance <= weaponRadius)
+                if (distance < shortDistance && distance <= WeaponRadius)
                 {
                     shortDistance = distance;
                     near = e.transform;
@@ -293,7 +297,7 @@ public class Weapon : MonoBehaviour
     
     void OnDrawGizmosSelected()//Permite visualizar onde o colisor sera criado
     {
-        Gizmos.DrawWireSphere(transform.position, weaponRadius);
+        Gizmos.DrawWireSphere(transform.position, WeaponRadius);
     }
 
   

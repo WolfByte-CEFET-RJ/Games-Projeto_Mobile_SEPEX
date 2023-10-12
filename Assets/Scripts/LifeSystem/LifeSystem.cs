@@ -60,6 +60,7 @@ public class LifeSystem : MonoBehaviour
             }
             else
             {
+                Destroy(gameObject);
                 //Fim da horda
             }
         }
