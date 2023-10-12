@@ -1881,6 +1881,7 @@ MonoBehaviour:
   damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}
   currentType: 1
   lifeBar: {fileID: 483442286}
+  coin: {fileID: 0}
 --- !u!1 &875309356
 GameObject:
   m_ObjectHideFlags: 0

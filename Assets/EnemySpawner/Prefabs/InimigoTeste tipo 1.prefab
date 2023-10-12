@@ -120,6 +120,7 @@ MonoBehaviour:
   damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}
   currentType: 0
   lifeBar: {fileID: 0}
+  coin: {fileID: 3561760817714756291, guid: c4f804f9931be9942b8e6cd70e3233bd, type: 3}
 --- !u!114 &-334406258453973332
 MonoBehaviour:
   m_ObjectHideFlags: 0

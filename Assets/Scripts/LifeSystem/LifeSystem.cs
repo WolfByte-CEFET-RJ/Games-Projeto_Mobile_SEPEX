@@ -17,7 +17,10 @@ public class LifeSystem : MonoBehaviour
         boss
     };
     [SerializeField] private typeLife currentType;
+    [Header("PlayerSettings")]
     [SerializeField] private Image lifeBar;
+    [Header("CommonEnemySettings")]
+    [SerializeField] private GameObject coin;
     void Start()
     {
         maxLife = currentLife;
@@ -46,6 +49,7 @@ public class LifeSystem : MonoBehaviour
         {
             if (currentType == typeLife.commonEnemy)
             {
+                Instantiate(coin, transform.position, transform.rotation);           
                 Destroy(gameObject);
             }
             else if(currentType == typeLife.player)

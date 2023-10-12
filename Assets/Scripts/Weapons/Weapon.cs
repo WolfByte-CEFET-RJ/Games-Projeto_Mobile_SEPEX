@@ -33,6 +33,7 @@ public class Weapon : MonoBehaviour
     void critico()
     {
         critic = Random.Range(1, 100);
+/*
         if (criticChance == 5)
         {
             if (critic <= 5)
@@ -173,6 +174,8 @@ public class Weapon : MonoBehaviour
                 critic = 1;
             }
         }
+*/
+        critic = critic <= criticChance ? 1 : 0;//Versao lowCode para chance de critico
         if (critic == 1)
         {
             damage = damage * Random.Range(2, 15);
