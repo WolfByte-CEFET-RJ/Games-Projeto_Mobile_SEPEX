@@ -9,7 +9,9 @@ public class PlayerCoin : MonoBehaviour
     [SerializeField] private Text coinText;
     [SerializeField] private float speedIncreased;
     [SerializeField] private int criticIncreased;
-    [SerializeField] private float rangeIncreased; 
+    private int criticIncrConter;//Outro contador(mesmo motivo do de baixo)
+    [SerializeField] private float rangeIncreased;
+    private float rangeIncrConter;//Contador para o quanto já foi incrementado, já que nem todas as armas possiveis podem existir quando o player decidir aumentar o alcance
     private PlayerMove playerMove;
 
     private void Start()
@@ -37,11 +39,19 @@ public class PlayerCoin : MonoBehaviour
     }
     void IncreaseCritic()
     {
-        Debug.Log("Aumentou critico");
+        criticIncrConter += criticIncreased;
+        Weapon[] weapons = GameObject.FindObjectsOfType<Weapon>();
+        foreach (Weapon w in weapons)
+            w.UpgradeCritic(criticIncrConter);
+
     }
     void IncreaseRange()
     {
-        Debug.Log("Aumentou alcance");
+        rangeIncrConter += rangeIncreased;
+        Weapon[] weapons = GameObject.FindObjectsOfType<Weapon>();
+        foreach (Weapon w in weapons)
+            w.UpgradeRadius(rangeIncrConter);
+        
     }
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)

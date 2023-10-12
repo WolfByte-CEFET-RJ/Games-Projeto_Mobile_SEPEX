@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5120670229520420683}
   - component: {fileID: -4222036169823437655}
   m_Layer: 0
-  m_Name: BossTeste
+  m_Name: BossTeste 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0.058195285, b: 0, a: 1}
+  m_Color: {r: 0.41509432, g: 0.24702948, b: 0.23652543, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   currentType: 2
   lifeBar: {fileID: 0}
   coin: {fileID: 0}
-  weaponDropped: {fileID: 5686382507146142289, guid: b0484e30fbf0dab4aa3e4f516ffb033b, type: 3}
+  weaponDropped: {fileID: 3900131864770905451, guid: 98a8318a3402e5d41ad36ed9f0af526b, type: 3}
 --- !u!114 &-5120670229520420683
 MonoBehaviour:
   m_ObjectHideFlags: 0

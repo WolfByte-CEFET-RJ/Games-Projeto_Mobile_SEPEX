@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float weaponRadius;
     [SerializeField] private bool isRanged;
     [SerializeField] private float fireRate;
+    private float initialWeaponRad;//Raio inicial de alcance
     private float cronometer;
 
     [Header("ShootConfigs (Ranged)")]
@@ -30,10 +31,31 @@ public class Weapon : MonoBehaviour
     private int critic;
 
     [SerializeField] private int criticChance;
-
+    private int initialCriticChnc;
     public float WeaponRadius { get => weaponRadius; set => weaponRadius = value; }
     public int CriticChance { get => criticChance; set => criticChance = value; }
+    void Start()
+    {
+        initialWeaponRad = weaponRadius;
+        initialCriticChnc = criticChance;
+        InvokeRepeating("SearchTarget", 0f, 0.25f);
+        anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
+    public void UpgradeRadius(float updt)
+    {
+        weaponRadius = initialWeaponRad + updt;
+        if(!isRanged)
+        {
+            transform.localScale = new Vector3(transform.localScale.x + 1, transform.localScale.y + 1, transform.localScale.z + 1);
+        }
+    }
+    public void UpgradeCritic(int updt)
+    {
+        criticChance = initialCriticChnc + updt;
+        
+    }
     void critico()
     {
         critic = Random.Range(1, 100);
@@ -186,12 +208,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        InvokeRepeating("SearchTarget", 0f, 0.25f);
-        anim = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+    
 
     void SearchTarget()
     {
