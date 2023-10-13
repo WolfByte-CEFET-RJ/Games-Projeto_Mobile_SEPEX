@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4050012036667165252}
   - component: {fileID: 4050012036667165253}
   - component: {fileID: 4050012036667165254}
+  - component: {fileID: 1207252897333569389}
   - component: {fileID: -5120670229520420683}
   - component: {fileID: -4222036169823437655}
-  - component: {fileID: 4965566902870161746}
   m_Layer: 0
   m_Name: BossTeste
   m_TagString: Enemy
@@ -104,6 +104,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &1207252897333569389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050012036667165255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4869da6e55022364186c60b9d54875e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLife: 15
+  damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}
+  currentType: 2
+  lifeBar: {fileID: 0}
+  coin: {fileID: 0}
+  weaponDropped: {fileID: 5686382507146142289, guid: b0484e30fbf0dab4aa3e4f516ffb033b, type: 3}
 --- !u!114 &-5120670229520420683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,18 +148,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
---- !u!114 &4965566902870161746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4050012036667165255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ad06a91de553064fb35fa42beaa55aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentLife: 15
-  weaponDropped: {fileID: 5686382507146142289, guid: b0484e30fbf0dab4aa3e4f516ffb033b, type: 3}
-  damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}

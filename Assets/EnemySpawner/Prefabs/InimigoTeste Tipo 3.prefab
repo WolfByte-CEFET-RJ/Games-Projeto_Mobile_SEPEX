@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8382813699969330609}
   - component: {fileID: 8382813699969330608}
   - component: {fileID: 8382813699969330611}
+  - component: {fileID: -3178896030958842745}
   - component: {fileID: 5687512536508619617}
   - component: {fileID: 9133843038863376386}
-  - component: {fileID: 6603422630729154498}
   m_Layer: 0
   m_Name: InimigoTeste Tipo 3
   m_TagString: Enemy
@@ -104,6 +104,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &-3178896030958842745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382813699969330610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4869da6e55022364186c60b9d54875e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLife: 3
+  damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}
+  currentType: 0
+  lifeBar: {fileID: 0}
+  coin: {fileID: 3561760817714756291, guid: c4f804f9931be9942b8e6cd70e3233bd, type: 3}
 --- !u!114 &5687512536508619617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,18 +147,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 6
---- !u!114 &6603422630729154498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8382813699969330610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97d8a02533d90284187b254ff488191e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentLife: 3
-  coin: {fileID: 3561760817714756291, guid: c4f804f9931be9942b8e6cd70e3233bd, type: 3}
-  damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}

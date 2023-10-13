@@ -26,10 +26,10 @@ public class WaveSpawner : MonoBehaviour
     private float nextSpawnTime;
 
     [SerializeField] private Animator anim;
-    private PlayerLife playerLife;
+    private LifeSystem playerLife;
     private void Start()
     {
-        playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
+        playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<LifeSystem>();
     }
     private void Update()
     {

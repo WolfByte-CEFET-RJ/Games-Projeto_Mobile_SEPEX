@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyFather : MonoBehaviour//Classe que sera pai de todos os inimigos
 {
     [SerializeField] private int damage;
-    private bool canDoDamage = true;
     void Start()
     {
         
@@ -20,18 +19,11 @@ public class EnemyFather : MonoBehaviour//Classe que sera pai de todos os inimig
     {
 
     }
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<PlayerLife>() && canDoDamage)
+        if(collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<LifeSystem>())
         {
-            collision.gameObject.GetComponent<PlayerLife>().OnDamage(damage);
-            StartCoroutine(onDamageBoost());
+            collision.gameObject.GetComponent<LifeSystem>().OnDamage(damage);
         }
-    }
-    IEnumerator onDamageBoost()
-    {
-        canDoDamage = false;
-        yield return new WaitForSeconds(0.5f);
-        canDoDamage = true;
     }
 }
