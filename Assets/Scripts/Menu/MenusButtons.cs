@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class MenuButtons : MonoBehaviour
+public class MenusButtons : MonoBehaviour
 {
     private bool _podeIniciarJogo = true;
 
@@ -15,15 +15,25 @@ public class MenuButtons : MonoBehaviour
             // Desconcidera iniciar o jogo se clicar em um botão
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                InicioJogo();
+                // Certifica-se de que está no menu antes de chamar a função
+                if (EstouMenu())
+                {
+                    ChamaFase("GameScene");
+                }
             }
         }
     }
 
-    // Função de iniciar o jogo
-    public void InicioJogo()
+    //Verica se está no menu para poder chamar
+    private bool EstouMenu()
     {
-        SceneManager.LoadScene("GameScene");
+        return SceneManager.GetActiveScene().name == "MainMenu";
+    }
+
+    // Função de chamar qualquer cena
+    public void ChamaFase(string nomeDaCena)
+    {
+        SceneManager.LoadScene(nomeDaCena);
     }
 
     // Função de sair do jogo
