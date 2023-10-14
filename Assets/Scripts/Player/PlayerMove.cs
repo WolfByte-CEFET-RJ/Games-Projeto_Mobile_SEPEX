@@ -7,14 +7,14 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private VariableJoystick varJoy;//A variavel do Joystick mobile
     private Rigidbody2D rig;
-    private SpriteRenderer sprite;
+    [SerializeField]private SpriteRenderer sprite;
 
     public float Speed { get => speed; set => speed = value; }
 
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        
     }
 
     private void FixedUpdate()
