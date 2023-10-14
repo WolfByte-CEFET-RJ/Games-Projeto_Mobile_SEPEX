@@ -6,6 +6,6 @@ public class Coin : MonoBehaviour
 {
     void Start()
     {
-        Destroy(gameObject, 6f);
+        Destroy(gameObject, 5);
     }  
 }

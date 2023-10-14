@@ -7,6 +7,9 @@ public class Shop : MonoBehaviour
 {
     private int[] conters = new int[3];//0-velocidade; 1-critico; 2-alcance
     [SerializeField] private Sprite[] statusBar;
+    [SerializeField] private Text[] errorTexts;
+    [SerializeField][TextArea] private string noMoneyTxt;
+    [SerializeField] [TextArea] private string noUpgradeTxt;
     // Start is called before the first frame update
     private PlayerCoin coins;
     private void Start()
@@ -30,10 +33,12 @@ public class Shop : MonoBehaviour
                 coins.SetCoins(5, 0);
             }
             else{
-                Debug.LogError("Sem dinheiro para essa arma\nJoel-Em breve faco a logica visual desse aviso");
+                StartCoroutine(ShowErrorTxt(noMoneyTxt, errorTexts[0], 0));
+                //Debug.LogError("Sem dinheiro para essa arma\nJoel-Em breve faco a logica visual desse aviso");
             }
         }
-        
+        else
+            StartCoroutine(ShowErrorTxt(noUpgradeTxt, errorTexts[0], 0));
     }
     public void UpdateCriticAtribute(Image i)//1
     {
@@ -47,10 +52,13 @@ public class Shop : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Sem dinheiro para essa arma\nJoel-Em breve faco a logica visual desse aviso");
+                StartCoroutine(ShowErrorTxt(noMoneyTxt, errorTexts[1], 1));
+                //Debug.LogError("Sem dinheiro para essa arma\nJoel-Em breve faco a logica visual desse aviso");
             }
 
-        }           
+        }
+        else
+            StartCoroutine(ShowErrorTxt(noUpgradeTxt, errorTexts[1], 1));
     }
     public void UpdateRangeAtribite(Image i)//2
     {
@@ -64,8 +72,21 @@ public class Shop : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Sem dinheiro para essa arma\nJoel-Em breve faco a logica visual desse aviso");
+                StartCoroutine(ShowErrorTxt(noMoneyTxt, errorTexts[2], 2));
+                //Debug.LogError("Sem dinheiro para essa arma\nJoel-Em breve faco a logica visual desse aviso");
             }
-        }           
+        }   
+        else
+            StartCoroutine(ShowErrorTxt(noUpgradeTxt, errorTexts[2], 2));
+    }
+    private byte[] errorCont = new byte[3];
+    IEnumerator ShowErrorTxt(string txt, Text errorTarget, int index)
+    {
+        errorTarget.text = txt;
+        errorCont[index]++; 
+        yield return new WaitForSeconds(1.5f);
+        errorCont[index]--;
+        if(errorCont[index] == 0)
+            errorTarget.text = "";
     }
 }
