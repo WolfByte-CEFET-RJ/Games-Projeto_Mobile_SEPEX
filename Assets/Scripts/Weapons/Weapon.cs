@@ -217,7 +217,7 @@ public class Weapon : MonoBehaviour
         {
             float shortDistance = Mathf.Infinity;
             Transform near = null;
-            //Para descobrir qual inimigo mais perto, precisamos checar, um a um dos que estão no colisor, qual o que possui a menor distancia do player
+            //Para descobrir qual inimigo mais perto, precisamos checar, um a um dos que estï¿½o no colisor, qual o que possui a menor distancia do player
             //Com isso, defini o "valor" de infinito para uma variavel que guardara a menor distancia entre um inimigo e o player
             //A cada iteracao, vou checar se a distancia atual e menor que a menor distancia. Se sim(e claro, da primeira vez com certeza), atualizo
             //a variavel shortDistance e a target
@@ -233,7 +233,7 @@ public class Weapon : MonoBehaviour
             }
             target = near;
         }
-        else //Se não existe inimigos nessa layer, então seto o target como null, ja que nao existe inimigos a focar
+        else //Se nï¿½o existe inimigos nessa layer, entï¿½o seto o target como null, ja que nao existe inimigos a focar
         {
             target = null;
         }
@@ -284,7 +284,7 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Não referenciou nada errado não, colega?\nCertifique-se que o GameObject bullet possui um componente BulletFather");
+            Debug.LogError("Nï¿½o referenciou nada errado nï¿½o, colega?\nCertifique-se que o GameObject bullet possui um componente BulletFather");
         }
         
     }
@@ -294,6 +294,7 @@ public class Weapon : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<LifeSystem>() && collision.gameObject.GetComponent<EnemyFollow>())
             {
+                AudioManager.main.PlaySFX(AudioManager.main.hitOnEnemy);   //Rodrigo --> chamando a funÃ§Ã£o PlaySFX para tocar o hit no Inimigo
                 critico();
                 EnemyFollow e = collision.gameObject.GetComponent<EnemyFollow>();
                 if(!e.GetOnDamage())

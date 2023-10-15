@@ -177,6 +177,7 @@ public class Rocket : BulletFather
         {
             if (collision.gameObject.GetComponent<LifeSystem>())
             {
+                AudioManager.main.PlaySFX(AudioManager.main.hitOnEnemy);   //Rodrigo --> chamando a função PlaySFX para tocar o hit no Inimigo
                 critico();
                 collision.gameObject.GetComponent<LifeSystem>().OnDamage(damage);
                 resetar();

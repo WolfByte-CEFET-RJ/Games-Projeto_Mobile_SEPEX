@@ -7,11 +7,6 @@ public class EnemyFather : MonoBehaviour//Classe que sera pai de todos os inimig
     [SerializeField] private int damage;
     private bool canDoDamage = true;
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +26,7 @@ public class EnemyFather : MonoBehaviour//Classe que sera pai de todos os inimig
     }
     IEnumerator onDamageBoost()
     {
+        AudioManager.main.PlaySFX(AudioManager.main.hitOnPlayer);   //Rodrigo --> chamando a função PlaySFX para tocar o hit no Player
         canDoDamage = false;
         yield return new WaitForSeconds(0.5f);
         canDoDamage = true;

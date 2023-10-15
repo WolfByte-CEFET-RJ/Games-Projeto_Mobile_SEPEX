@@ -10,6 +10,7 @@ TagManager:
   - Weapon1
   - Weapon2
   - Weapon3
+  - Audio
   layers:
   - Default
   - TransparentFX

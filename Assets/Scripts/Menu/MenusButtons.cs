@@ -12,12 +12,13 @@ public class MenusButtons : MonoBehaviour
     {
         if (_podeIniciarJogo && (Input.GetMouseButtonDown(0) || Input.touchCount > 0))
         {
-            // Desconcidera iniciar o jogo se clicar em um botão
+            // Desconsidera iniciar o jogo se clicar em um botão
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 // Certifica-se de que está no menu antes de chamar a função
                 if (EstouMenu())
                 {
+                    AudioManager.main.PlaySFX(AudioManager.main.menuBtnIn);   //Rodrigo --> chamando a função PlaySFX para tocar o Button In
                     ChamaFase("GameScene");
                 }
             }
@@ -33,12 +34,16 @@ public class MenusButtons : MonoBehaviour
     // Função de chamar qualquer cena
     public void ChamaFase(string nomeDaCena)
     {
+        //AudioManager.main.PlaySFX(btnIn);     Rodrigo
+        //yield return new WaitForSeconds(2f);  Rodrigo
         SceneManager.LoadScene(nomeDaCena);
     }
 
     // Função de sair do jogo
     public void SairJogo()
     {
+        //AudioManager.main.PlaySFX(btnOut);
         Application.Quit();
     }
 }
+
