@@ -48,7 +48,7 @@ public class Weapon : MonoBehaviour
         weaponRadius = initialWeaponRad + updt;
         if(!isRanged)
         {
-            transform.localScale = new Vector3(transform.localScale.x + 1, transform.localScale.y + 1, transform.localScale.z + 1);
+            transform.localScale = new Vector3(transform.localScale.x + 0.25f, transform.localScale.y + 0.25f, transform.localScale.z + 0.25f);
         }
     }
     public void UpgradeCritic(int updt)
