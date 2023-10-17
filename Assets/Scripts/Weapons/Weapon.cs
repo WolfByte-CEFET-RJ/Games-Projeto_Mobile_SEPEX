@@ -233,7 +233,7 @@ public class Weapon : MonoBehaviour
             }
             target = near;
         }
-        else //Se n�o existe inimigos nessa layer, ent�o seto o target como null, ja que nao existe inimigos a focar
+        else //Se nao existe inimigos nessa layer, entao seto o target como null, ja que nao existe inimigos a focar
         {
             target = null;
         }
@@ -249,7 +249,7 @@ public class Weapon : MonoBehaviour
 
         if (!target)//Se o alvo for nulo, paro a leitura do update por aqui mesmo
             return;
-        transform.up = (Vector2)(target.position - transform.position);
+        transform.right = (Vector2)(target.position - transform.position);
         if (cronometer >= fireRate)//Se cronometer for maior que fireRate, atiro e reinicio a variavel cronometer
         {
             if (isRanged)
@@ -284,7 +284,7 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            Debug.LogError("N�o referenciou nada errado n�o, colega?\nCertifique-se que o GameObject bullet possui um componente BulletFather");
+            Debug.LogError("Nao referenciou nada errado nao, colega?\nCertifique-se que o GameObject bullet possui um componente BulletFather");
         }
         
     }
