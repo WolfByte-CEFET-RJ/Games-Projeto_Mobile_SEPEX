@@ -12,7 +12,7 @@ public class Wave
 }
 public class WaveSpawner : MonoBehaviour
 {
-    
+    public bool win;
     public Wave[] waves;
     public Transform[] spawnPoints;
     public GameObject botao, timer;
@@ -27,21 +27,26 @@ public class WaveSpawner : MonoBehaviour
 
     [SerializeField] private Animator anim;
     private PlayerLife playerLife;
+    GameObject[] totalEnemies;
     private void Start()
     {
         playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
     }
     private void Update()
     {
-        currentWave = waves[currentWaveNumber];
+        
+            currentWave = waves[currentWaveNumber];
         SpawnWave();
-        GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+         totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber + 1 != waves.Length)
         {
             OnBot();
 
         }
-        
+        if (currentWaveNumber + 1 == waves.Length && currentWave.numOfEnemies == 0 && totalEnemies.Length == 0)
+        {
+            win = true;
+        }
     }
     void OnBot()
     {
@@ -102,14 +107,16 @@ public class WaveSpawner : MonoBehaviour
                 
 
             }
-            if (currentWave.numOfEnemies == 0)
+            if(currentWave.numOfEnemies == 0)
             {
                 canSpawn = false;
+                win = false;
             }
         }
         
 
     }
-
+    
+    
 
 }

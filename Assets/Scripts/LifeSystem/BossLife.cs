@@ -31,6 +31,7 @@ public class BossLife : LifeSystem
         }
         if (currentLife <= 0)
         {
+            
             DropWeapon();
             Destroy(gameObject);
         }

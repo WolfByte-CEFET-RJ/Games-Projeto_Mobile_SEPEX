@@ -143,5 +143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLife: 4
+  k: {fileID: 2172468588700898498, guid: 92a1c5cd7c914414689fb3990511a9b5, type: 3}
   coin: {fileID: 3561760817714756291, guid: c4f804f9931be9942b8e6cd70e3233bd, type: 3}
   damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}
