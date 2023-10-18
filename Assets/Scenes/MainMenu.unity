@@ -2043,9 +2043,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c41da57c7c3a64fb4d50181b81c388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliderMusica: {fileID: 1949160914}
-  sliderSFX: {fileID: 1298070489}
-  myMixer: {fileID: 24100000, guid: 15a61bafec91ac64f8ca7df1e50b576a, type: 2}
+  thisSlider: {fileID: 1298070489}
+  state: 2
 --- !u!1 &1369104351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,6 +2715,9 @@ MonoBehaviour:
   hitOnEnemy: {fileID: 8300000, guid: 11fff18db3b03aa468dfb695b328b1fa, type: 3}
   menuBtnIn: {fileID: 8300000, guid: 263a15d62203a4642b721c8678f234d8, type: 3}
   menuBtnOut: {fileID: 8300000, guid: 46216bb10b7fc9141bd9a8272fc0745e, type: 3}
+  sliderMusica: {fileID: 1949160914}
+  sliderSFX: {fileID: 1298070489}
+  myMixer: {fileID: 24100000, guid: 15a61bafec91ac64f8ca7df1e50b576a, type: 2}
 --- !u!4 &1776790581
 Transform:
   m_ObjectHideFlags: 0
@@ -2995,9 +2997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c41da57c7c3a64fb4d50181b81c388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliderMusica: {fileID: 1949160914}
-  sliderSFX: {fileID: 1298070489}
-  myMixer: {fileID: 24100000, guid: 15a61bafec91ac64f8ca7df1e50b576a, type: 2}
+  thisSlider: {fileID: 1949160914}
+  state: 1
 --- !u!114 &1949160914
 MonoBehaviour:
   m_ObjectHideFlags: 0
