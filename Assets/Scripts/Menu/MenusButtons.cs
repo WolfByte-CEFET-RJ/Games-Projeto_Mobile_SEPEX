@@ -25,6 +25,10 @@ public class MenusButtons : MonoBehaviour
         }
     }
 
+    public void Creditos()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
     //Verica se está no menu para poder chamar
     private bool EstouMenu()
     {
