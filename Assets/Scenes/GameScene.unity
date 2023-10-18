@@ -4593,6 +4593,7 @@ MonoBehaviour:
   hitOnEnemy: {fileID: 8300000, guid: 11fff18db3b03aa468dfb695b328b1fa, type: 3}
   menuBtnIn: {fileID: 8300000, guid: 263a15d62203a4642b721c8678f234d8, type: 3}
   menuBtnOut: {fileID: 8300000, guid: 46216bb10b7fc9141bd9a8272fc0745e, type: 3}
+  myMixer: {fileID: 24100000, guid: 15a61bafec91ac64f8ca7df1e50b576a, type: 2}
 --- !u!4 &1373477368
 Transform:
   m_ObjectHideFlags: 0
