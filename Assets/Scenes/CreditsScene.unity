@@ -413,7 +413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -650}
+  m_AnchoredPosition: {x: 0, y: -822}
   m_SizeDelta: {x: 350, y: 1078.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1824807088
@@ -428,8 +428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559e2043139fe2448bf689291712f090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 30
-  limitePosicaoY: 628
+  velocidade: 40
+  limitePosicaoY: 744
   nomeMenuScene: MainMenu
 --- !u!114 &1824807089
 MonoBehaviour:
@@ -457,7 +457,7 @@ MonoBehaviour:
     da Costa</size>\r\n\r\n<size=40>Arte & Som\r</size>\n<size=30>Arthur Chavarri</size>\r\n<size=30>Bruno
     Gabriel</size>\r\n<size=30>Jo\xE3o Pedro Francisco</size>\r\n<size=30>Miguel
     \xC2ngelo</size>\r\n<size=30>Thayse Bachmeyer</size>\r\n\n<b>Agradecimentos\r</b>\n<size=30>Ao
-    IEEE e amigos</size>"
+    IEEE, Fam\xEDlia e amigos</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -688,6 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a422ff07359d3b44eac4c98f4d03f2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _podeIniciarJogo: 1
 --- !u!224 &6282486059497301952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -706,7 +707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0025024414, y: 0}
+  m_AnchoredPosition: {x: -39.200012, y: -43.800003}
   m_SizeDelta: {x: 30.785004, y: 39.259995}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &7972083645286179021

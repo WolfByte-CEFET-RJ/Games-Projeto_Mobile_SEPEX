@@ -1610,7 +1610,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: 0}
+  m_AnchoredPosition: {x: 9, y: -34.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &290200373
@@ -2026,6 +2026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a422ff07359d3b44eac4c98f4d03f2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _podeIniciarJogo: 1
 --- !u!114 &381660102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4424,6 +4425,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1373477367}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 263a15d62203a4642b721c8678f234d8, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &891036141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6279,6 +6292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a422ff07359d3b44eac4c98f4d03f2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _podeIniciarJogo: 1
 --- !u!114 &1252158483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6694,7 +6708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 274, y: -78}
+  m_AnchoredPosition: {x: -4, y: -99.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318468725
@@ -7216,6 +7230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a422ff07359d3b44eac4c98f4d03f2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _podeIniciarJogo: 1
 --- !u!114 &1332557478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8431,7 +8446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 68.79999}
+  m_AnchoredPosition: {x: 0, y: 51.199978}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1487599990
@@ -9286,10 +9301,10 @@ RectTransform:
   m_Father: {fileID: 509027130}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1618938651
 CanvasGroup:
@@ -9699,6 +9714,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1373477367}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 46216bb10b7fc9141bd9a8272fc0745e, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10317,7 +10344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 130}
+  m_AnchoredPosition: {x: 0, y: 112.4}
   m_SizeDelta: {x: 435, y: 481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729626729
@@ -10744,7 +10771,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Wave
+  m_Text: "Pr\xF3xima Onda"
 --- !u!222 &1779259321
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12844,7 +12871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33, y: 127.09998}
+  m_AnchoredPosition: {x: 33, y: 109.49997}
   m_SizeDelta: {x: 605, y: 391}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065901109
@@ -12981,7 +13008,7 @@ GameObject:
   - component: {fileID: 2100953913}
   - component: {fileID: 2100953912}
   m_Layer: 0
-  m_Name: WeaponPrego (1)
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12996,7 +13023,7 @@ Transform:
   m_GameObject: {fileID: 2100953910}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65529, y: 0.65529, z: 0.65529}
+  m_LocalScale: {x: 0.48, y: 0.48, z: 0.48}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 986888506}
@@ -13064,8 +13091,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 03ca8b44acc42cc469c96e196ddda6a9, type: 3}
-  m_Color: {r: 1, g: 0.68301886, b: 0.8875601, a: 1}
+  m_Sprite: {fileID: 21300000, guid: add5d1941c454004b8a2c22fe6402145, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

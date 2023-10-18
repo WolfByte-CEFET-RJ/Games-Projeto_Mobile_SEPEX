@@ -44,12 +44,16 @@ public class AudioManager : MonoBehaviour
                 break;
         }
 
-        if(!PlayerPrefs.HasKey("musicVolume"))
+        if(!PlayerPrefs.HasKey("musicVolume")){
             myMixer.SetFloat("musica", 0);
+            PlayerPrefs.SetFloat("musicVolume", 1);
+        }
         else Load(1);
 
-        if(!PlayerPrefs.HasKey("sfxVolume"))
+        if(!PlayerPrefs.HasKey("sfxVolume")){
             myMixer.SetFloat("sfx", 0);
+            PlayerPrefs.SetFloat("sfxVolume", 1);
+        }
         else Load(2);
     }
 

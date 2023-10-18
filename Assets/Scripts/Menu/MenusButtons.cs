@@ -6,14 +6,18 @@ using UnityEngine.EventSystems;
 
 public class MenusButtons : MonoBehaviour
 {
-    private bool _podeIniciarJogo = true;
+    [HideInInspector] public bool _podeIniciarJogo = true;
+    public static MenusButtons main;
 
+    void Awake(){
+        main = this;
+    }
     void Update()
     {
-        if (_podeIniciarJogo && (Input.GetMouseButtonDown(0) || Input.touchCount > 0))
+        /*if(!EventSystem.current.IsPointerOverGameObject())
         {
             // Desconsidera iniciar o jogo se clicar em um botão
-            if (!EventSystem.current.IsPointerOverGameObject())
+            if (_podeIniciarJogo && (Input.GetMouseButtonDown(0) || Input.touchCount > 0))
             {
                 // Certifica-se de que está no menu antes de chamar a função
                 if (EstouMenu())
@@ -22,7 +26,7 @@ public class MenusButtons : MonoBehaviour
                     ChamaFase("GameScene");
                 }
             }
-        }
+        }*/
     }
 
     public void Creditos()
@@ -30,7 +34,7 @@ public class MenusButtons : MonoBehaviour
         SceneManager.LoadScene("CreditsScene");
     }
     //Verica se está no menu para poder chamar
-    private bool EstouMenu()
+    public bool EstouMenu()
     {
         return SceneManager.GetActiveScene().name == "MainMenu";
     }
