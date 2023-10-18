@@ -542,7 +542,7 @@ MonoBehaviour:
     typeOfEnemies:
     - {fileID: 6451746551028648012, guid: ae44cc749b6202a47aa037634d8cbe0f, type: 3}
     - {fileID: 3565212111899806179, guid: f99f150bb8670624783ddcac6821df9e, type: 3}
-    - {fileID: 1881707085332934492, guid: ee309d9864131ed4e92aa476080c303a, type: 3}
+    - {fileID: 6220357825684652204, guid: c34064769ed298b4090090864f66ae39, type: 3}
     boss: {fileID: 4050012036667165255, guid: e1b11c8565d2ff74a934dd21c5832885, type: 3}
     spawnInterval: 1.7
   - waveName: Wave 2
@@ -550,7 +550,7 @@ MonoBehaviour:
     typeOfEnemies:
     - {fileID: 6451746551028648012, guid: ae44cc749b6202a47aa037634d8cbe0f, type: 3}
     - {fileID: 3565212111899806179, guid: f99f150bb8670624783ddcac6821df9e, type: 3}
-    - {fileID: 1881707085332934492, guid: ee309d9864131ed4e92aa476080c303a, type: 3}
+    - {fileID: 6220357825684652204, guid: c34064769ed298b4090090864f66ae39, type: 3}
     boss: {fileID: 4050012036667165255, guid: 70dda899cf67eaa4c9bd0702625ec94e, type: 3}
     spawnInterval: 1.5
   - waveName: Wave 3
@@ -558,7 +558,7 @@ MonoBehaviour:
     typeOfEnemies:
     - {fileID: 6451746551028648012, guid: ae44cc749b6202a47aa037634d8cbe0f, type: 3}
     - {fileID: 3565212111899806179, guid: f99f150bb8670624783ddcac6821df9e, type: 3}
-    - {fileID: 1881707085332934492, guid: ee309d9864131ed4e92aa476080c303a, type: 3}
+    - {fileID: 6220357825684652204, guid: c34064769ed298b4090090864f66ae39, type: 3}
     boss: {fileID: 4050012036667165255, guid: 1f7643b52e5716c41aa613b852977a95, type: 3}
     spawnInterval: 1.1
   - waveName: Wave 4
@@ -566,7 +566,7 @@ MonoBehaviour:
     typeOfEnemies:
     - {fileID: 6451746551028648012, guid: ae44cc749b6202a47aa037634d8cbe0f, type: 3}
     - {fileID: 3565212111899806179, guid: f99f150bb8670624783ddcac6821df9e, type: 3}
-    - {fileID: 1881707085332934492, guid: ee309d9864131ed4e92aa476080c303a, type: 3}
+    - {fileID: 6220357825684652204, guid: c34064769ed298b4090090864f66ae39, type: 3}
     boss: {fileID: 4050012036667165255, guid: e1b11c8565d2ff74a934dd21c5832885, type: 3}
     spawnInterval: 0.7
   - waveName: Final Wave
@@ -574,7 +574,7 @@ MonoBehaviour:
     typeOfEnemies:
     - {fileID: 6451746551028648012, guid: ae44cc749b6202a47aa037634d8cbe0f, type: 3}
     - {fileID: 3565212111899806179, guid: f99f150bb8670624783ddcac6821df9e, type: 3}
-    - {fileID: 1881707085332934492, guid: ee309d9864131ed4e92aa476080c303a, type: 3}
+    - {fileID: 6220357825684652204, guid: c34064769ed298b4090090864f66ae39, type: 3}
     boss: {fileID: 4050012036667165255, guid: e1b11c8565d2ff74a934dd21c5832885, type: 3}
     spawnInterval: 0.3
   spawnPoints:
@@ -5102,6 +5102,7 @@ RectTransform:
   - {fileID: 676667317}
   - {fileID: 1252158481}
   - {fileID: 927116720}
+  - {fileID: 2130802860}
   m_Father: {fileID: 509027130}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7604,6 +7605,86 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065901107}
+  m_CullTransparentMesh: 1
+--- !u!1 &2130802859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2130802860}
+  - component: {fileID: 2130802862}
+  - component: {fileID: 2130802861}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2130802860
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130802859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1507216664}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000019073, y: 46.999992}
+  m_SizeDelta: {x: 700.99, y: 94}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2130802861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130802859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.745283, g: 0.49220866, b: 0.059763268, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Esse \xE9 o fim da vers\xE3o demo, Obrigado por jogar!"
+--- !u!222 &2130802862
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130802859}
   m_CullTransparentMesh: 1
 --- !u!1 &140194727553364822
 GameObject:

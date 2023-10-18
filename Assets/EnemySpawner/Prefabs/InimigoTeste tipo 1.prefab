@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6451746551028648012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.7, y: 0.74, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7386, y: 1.7386, z: 1.7386}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.27118188, g: 0.5188679, b: 0.28997135, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c5e7534645a445243b109f29d186d97e, type: 3}
+  m_Color: {r: 0.08085619, g: 0.745283, b: 0.13358843, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,8 +101,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.005575895, y: -0.01115155}
+  m_Size: {x: 0.698905, y: 1.375507}
   m_Direction: 0
 --- !u!114 &-334406258453973332
 MonoBehaviour:
@@ -143,6 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLife: 4
-  k: {fileID: 2172468588700898498, guid: 92a1c5cd7c914414689fb3990511a9b5, type: 3}
   coin: {fileID: 3561760817714756291, guid: c4f804f9931be9942b8e6cd70e3233bd, type: 3}
   damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}

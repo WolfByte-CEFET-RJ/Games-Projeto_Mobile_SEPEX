@@ -24,7 +24,7 @@ public class DamageText : MonoBehaviour
         else if (dmg > 8)
         {
             damage.color = Color.red;
-            damage.text = "Critical Hit!\n" +value;
+            damage.text = "Dano Crítico!\n" +value;
         }else
         damage.text = value;
     }

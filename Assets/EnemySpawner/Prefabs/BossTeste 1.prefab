@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4050012036667165255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.33, y: -4.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.41509432, g: 0.24702948, b: 0.23652543, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c5e7534645a445243b109f29d186d97e, type: 3}
+  m_Color: {r: 0, g: 0.046100616, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,8 +101,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.0008810759, y: -0.009777904}
+  m_Size: {x: 0.6940372, y: 1.343555}
   m_Direction: 0
 --- !u!114 &-5120670229520420683
 MonoBehaviour:
@@ -145,4 +145,3 @@ MonoBehaviour:
   currentLife: 20
   weaponDropped: {fileID: 3900131864770905451, guid: 98a8318a3402e5d41ad36ed9f0af526b, type: 3}
   damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}
-  k: {fileID: 2172468588700898498, guid: 92a1c5cd7c914414689fb3990511a9b5, type: 3}
