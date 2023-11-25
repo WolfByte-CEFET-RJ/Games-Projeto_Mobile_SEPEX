@@ -14,6 +14,7 @@ public class EnemyRanged : EnemyFather//Lembrar de mudar a logica para invokeRep
     [SerializeField] private GameObject bullet;
 
     private bool onAttack;
+    private bool cancelAttack;
     [SerializeField] private float radius;
     void Start()
     {
@@ -28,7 +29,7 @@ public class EnemyRanged : EnemyFather//Lembrar de mudar a logica para invokeRep
         if(playerPos)
         {
             float dist = Vector2.Distance(transform.position, playerPos.position);
-            if (dist <= radius && !onAttack)
+            if (dist <= radius && !onAttack  && !move.GetOnDamage())
             {
                 StartCoroutine(Attack());
             }
@@ -46,23 +47,38 @@ public class EnemyRanged : EnemyFather//Lembrar de mudar a logica para invokeRep
     IEnumerator Attack()
     {
         onAttack = true;
+        cancelAttack = false;
 
         Vector3 target = playerPos.position;
         targetObj.transform.position = target;
         targetObj.SetActive(true);
         move.Speed = 0;
-        yield return new WaitForSeconds(1f);
-        //if(onAttack)
-        //{
+        for(int i = 0; i < 10; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            if(move.GetOnDamage())
+            {
+                //Debug.Log("Tomou dano");
+                targetObj.SetActive(false);
+                move.Speed = move.getInitialSpeed();
+                cancelAttack = true;              
+            }
+        }
+        if(!cancelAttack)
+        {
             GameObject bul = Instantiate(bullet, transform.position, transform.rotation);
+            targetObj.SetActive(false);
             if (bul.GetComponent<EnemyBullet>())
                 bul.GetComponent<EnemyBullet>().SetTarget(target);
             else
                 Debug.LogError("Referencie corretamente o GameObject bullet!");
+            yield return new WaitForSeconds(0.2f);
             move.Speed = move.getInitialSpeed();
-            targetObj.SetActive(false);
+            
+        }
+        
            
-        //}
+
         onAttack = false;
     }
 
