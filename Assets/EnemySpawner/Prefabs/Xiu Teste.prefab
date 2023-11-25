@@ -254,7 +254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   targetObj: {fileID: 389103384786374577}
-  bullet: {fileID: 5908249954635091191, guid: ba9b202c1ed2dc34a97657bd5e1757af, type: 3}
+  bullet: {fileID: 8785788647199013395, guid: b810264e73fc4cd4c8b9336f8f08a454, type: 3}
+  radius: 9
 --- !u!58 &2592500109326591918
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -262,7 +263,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6451746551028648012}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
