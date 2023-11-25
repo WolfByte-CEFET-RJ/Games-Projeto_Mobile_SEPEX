@@ -11,6 +11,7 @@ TagManager:
   - Weapon2
   - Weapon3
   - Audio
+  - Target
   layers:
   - Default
   - TransparentFX

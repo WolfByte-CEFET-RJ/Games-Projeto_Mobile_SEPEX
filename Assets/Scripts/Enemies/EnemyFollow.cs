@@ -5,12 +5,17 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     public float Speed;
+    private float initialSpeed;
     private Transform Target;
     private bool onDamage;
+
     public void SetOnDamage(bool b) { onDamage = b; }
     public bool GetOnDamage() { return onDamage; }
+    public float getInitialSpeed() { return initialSpeed; }
+
     void Start()
     {
+        initialSpeed = Speed;
         if(GameObject.FindGameObjectWithTag("Player") != null)
             Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }

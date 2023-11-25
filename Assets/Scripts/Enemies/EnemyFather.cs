@@ -8,14 +8,7 @@ public class EnemyFather : MonoBehaviour//Classe que sera pai de todos os inimig
     private bool canDoDamage = true;
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void Move()
-    {
-
-    }
+   
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<PlayerLife>() && canDoDamage)

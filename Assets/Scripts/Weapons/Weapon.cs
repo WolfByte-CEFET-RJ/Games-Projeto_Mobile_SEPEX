@@ -290,7 +290,7 @@ public class Weapon : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!isRanged && collision.gameObject.tag=="Enemy")
+        if(!isRanged && collision.gameObject.tag=="Enemy" && !collision.isTrigger)
         {
             if (collision.gameObject.GetComponent<LifeSystem>() && collision.gameObject.GetComponent<EnemyFollow>())
             {
