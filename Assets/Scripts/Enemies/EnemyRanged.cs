@@ -7,7 +7,7 @@ public class EnemyRanged : EnemyFather//Lembrar de mudar a logica para invokeRep
     private Transform playerPos;
 
     private EnemyFollow move;
-
+    private Animator anim;
 
     [SerializeField] private GameObject targetObj;
 
@@ -18,8 +18,10 @@ public class EnemyRanged : EnemyFather//Lembrar de mudar a logica para invokeRep
     [SerializeField] private float radius;
     void Start()
     {
+        anim = GetComponent<Animator>();
         move = GetComponent<EnemyFollow>();
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        if(GameObject.FindGameObjectWithTag("Player"))
+            playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         targetObj.SetActive(false);
         InvokeRepeating("CheckDistance", 0, 0.25f);
     }
@@ -48,7 +50,7 @@ public class EnemyRanged : EnemyFather//Lembrar de mudar a logica para invokeRep
     {
         onAttack = true;
         cancelAttack = false;
-
+        anim.SetInteger("isAtk", 1);
         Vector3 target = playerPos.position;
         targetObj.transform.position = target;
         targetObj.SetActive(true);
@@ -61,7 +63,8 @@ public class EnemyRanged : EnemyFather//Lembrar de mudar a logica para invokeRep
                 //Debug.Log("Tomou dano");
                 targetObj.SetActive(false);
                 move.Speed = move.getInitialSpeed();
-                cancelAttack = true;              
+                cancelAttack = true; 
+                anim.SetInteger("isAtk", 0);             
             }
         }
         if(!cancelAttack)
@@ -74,7 +77,7 @@ public class EnemyRanged : EnemyFather//Lembrar de mudar a logica para invokeRep
                 Debug.LogError("Referencie corretamente o GameObject bullet!");
             yield return new WaitForSeconds(0.2f);
             move.Speed = move.getInitialSpeed();
-            
+            anim.SetInteger("isAtk", 0);
         }
         
            

@@ -178,9 +178,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 1912805537}
-  speedIncreased: 50
+  speedIncreased: 40
   criticIncreased: 5
-  rangeIncreased: 1
+  rangeIncreased: 0.325
 --- !u!50 &32440345
 Rigidbody2D:
   serializedVersion: 4
