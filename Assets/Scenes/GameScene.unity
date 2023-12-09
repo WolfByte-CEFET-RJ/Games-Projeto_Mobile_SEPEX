@@ -159,12 +159,12 @@ MonoBehaviour:
   currentLife: 5
   lifeBar: {fileID: 1836296319}
   lifeSprites:
-  - {fileID: -307875538, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
-  - {fileID: 815234449, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
-  - {fileID: 1099360668, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
-  - {fileID: 1533011284, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
-  - {fileID: 899380012, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
-  - {fileID: -1426090892, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
+  - {fileID: 1536106367, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
+  - {fileID: 938871123, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
+  - {fileID: -1699197682, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
+  - {fileID: -502802749, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
+  - {fileID: 2005226628, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
+  - {fileID: -821456398, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
 --- !u!114 &32440344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1217,9 +1217,18 @@ MonoBehaviour:
     - {fileID: 8575146113668735279, guid: 0227a97cf67903f42bd707be76493e68, type: 3}
     boss: {fileID: 1450826777653584437, guid: dc76fb1c680649e4ab82cc09b7e0bd75, type: 3}
     spawnInterval: 0.3
+  - waveName: Final Wave
+    numOfEnemies: 1
+    typeOfEnemies:
+    - {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
+    - {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
+    - {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
+    boss: {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
+    spawnInterval: 0.3
   botao: {fileID: 1318468723}
   timer: {fileID: 1542388318}
   x: {fileID: 1542388320}
+  flip: {fileID: 1846269062946984761, guid: 4dd862c931121464e8136f193d2e18e5, type: 3}
   anim: {fileID: 1618938652}
 --- !u!4 &182941475
 Transform:
@@ -10928,7 +10937,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1426090892, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
+  m_Sprite: {fileID: -821456398, guid: 3318d39f0d09426499649e068ec3f60f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

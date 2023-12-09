@@ -16,6 +16,7 @@ public class WaveSpawner : MonoBehaviour
     public Wave[] waves;
     public GameObject botao, timer;
     public Timer x;
+    public GameObject flip;
 
     private Wave currentWave;
     private int currentWaveNumber;
@@ -27,6 +28,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private Animator anim;
     private PlayerLife playerLife;
     GameObject[] totalEnemies;
+    GameObject[] totalWarnings;
     private void Start()
     {
         playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
@@ -37,12 +39,13 @@ public class WaveSpawner : MonoBehaviour
             currentWave = waves[currentWaveNumber];
         SpawnWave();
          totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+         totalWarnings = GameObject.FindGameObjectsWithTag("Warning");
         if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber + 1 != waves.Length)
         {
             OnBot();
 
         }
-        if (currentWaveNumber + 1 == waves.Length && currentWave.numOfEnemies == 0 && totalEnemies.Length == 0)
+        if (currentWaveNumber + 1 == waves.Length && currentWave.numOfEnemies == 0 && totalEnemies.Length == 0 && totalWarnings.Length==0)
         {
             win = true;
         }

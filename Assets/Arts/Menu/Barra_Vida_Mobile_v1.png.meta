@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -79,30 +79,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -125,18 +101,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -144,10 +108,10 @@ TextureImporter:
       name: Barra_Vida_Mobile_v1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 39
-        width: 135
-        height: 38
+        x: 2
+        y: 43
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 451ef6651fefa234ca8cb74ed81590e6
-      internalID: -1426090892
+      spriteID: 37c77f622f0e66048a4224997cf85e9f
+      internalID: -821456398
       vertices: []
       indices: 
       edges: []
@@ -165,10 +129,10 @@ TextureImporter:
       name: Barra_Vida_Mobile_v1_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 39
-        width: 135
-        height: 38
+        x: 139
+        y: 43
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b73cb76cdb0a0bc42a9d8c02475eb37f
-      internalID: 899380012
+      spriteID: 76be8f1cf6d04574b83ee5727024a579
+      internalID: 2005226628
       vertices: []
       indices: 
       edges: []
@@ -186,10 +150,10 @@ TextureImporter:
       name: Barra_Vida_Mobile_v1_2
       rect:
         serializedVersion: 2
-        x: 270
-        y: 39
-        width: 135
-        height: 38
+        x: 276
+        y: 43
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c49e3fb188abc648b2a1f406b919b32
-      internalID: 1533011284
+      spriteID: a912d469f29d8a64785a2bde58529b94
+      internalID: -502802749
       vertices: []
       indices: 
       edges: []
@@ -207,10 +171,10 @@ TextureImporter:
       name: Barra_Vida_Mobile_v1_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 135
-        height: 38
+        x: 2
+        y: 2
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76dce099927311543bbb59de91fc4647
-      internalID: 1099360668
+      spriteID: 7775c1537cf4bf14da249a9a33b8af2b
+      internalID: -1699197682
       vertices: []
       indices: 
       edges: []
@@ -228,10 +192,10 @@ TextureImporter:
       name: Barra_Vida_Mobile_v1_4
       rect:
         serializedVersion: 2
-        x: 135
-        y: 1
-        width: 135
-        height: 38
+        x: 139
+        y: 2
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90151a08edbad944ba0237095a4d2367
-      internalID: 815234449
+      spriteID: 0154c08e009c83c468bf8c5fd4eb39f4
+      internalID: 938871123
       vertices: []
       indices: 
       edges: []
@@ -249,10 +213,10 @@ TextureImporter:
       name: Barra_Vida_Mobile_v1_5
       rect:
         serializedVersion: 2
-        x: 270
-        y: 1
-        width: 135
-        height: 38
+        x: 276
+        y: 2
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ade8db9fd1402db4ca93fe4cd85ccce1
-      internalID: -307875538
+      spriteID: 869ee776f0f6c0a40b44a9c305b0977b
+      internalID: 1536106367
       vertices: []
       indices: 
       edges: []
@@ -277,12 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Barra_Vida_Mobile_v1_0: -1426090892
-      Barra_Vida_Mobile_v1_1: 899380012
-      Barra_Vida_Mobile_v1_2: 1533011284
-      Barra_Vida_Mobile_v1_3: 1099360668
-      Barra_Vida_Mobile_v1_4: 815234449
-      Barra_Vida_Mobile_v1_5: -307875538
+      Barra_Vida_Mobile_v1_0: -821456398
+      Barra_Vida_Mobile_v1_1: 2005226628
+      Barra_Vida_Mobile_v1_2: -502802749
+      Barra_Vida_Mobile_v1_3: -1699197682
+      Barra_Vida_Mobile_v1_4: 938871123
+      Barra_Vida_Mobile_v1_5: 1536106367
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
