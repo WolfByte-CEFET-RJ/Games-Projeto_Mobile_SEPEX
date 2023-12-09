@@ -5,14 +5,10 @@ using UnityEngine;
 public class BossLife : LifeSystem
 {
     [Header("BossSettings")]
-    [SerializeField] private GameObject weaponDropped;
+    //[SerializeField] private GameObject weaponDropped;
     [SerializeField] private GameObject damageText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+   /*
     void DropWeapon()
     {
         if (weaponDropped != null)
@@ -20,6 +16,7 @@ public class BossLife : LifeSystem
             Instantiate(weaponDropped, transform.position, transform.rotation);
         }
     }
+    */
     public override void OnDamage(int dmg)
     {
         base.OnDamage(dmg);
@@ -32,7 +29,7 @@ public class BossLife : LifeSystem
         if (currentLife <= 0)
         {
             
-            DropWeapon();
+            //DropWeapon();
             Destroy(gameObject);
         }
 
