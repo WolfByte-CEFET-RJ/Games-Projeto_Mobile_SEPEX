@@ -10,7 +10,7 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     Image im;
     [SerializeField] private Transform weaponReference;
 
-    private Transform initialParent;//guardar a posicao inicial do objeto, em caso de sobreescrita
+    [SerializeField] private Transform initialParent;//guardar a posicao inicial do objeto, em caso de sobreescrita
     private Transform parentTransf;
     [Space]
     [SerializeField] private Transform parentVisible;//Variavel necessária, pois sem ela certas armas acabam ficando atras de outros objs na cena
@@ -23,7 +23,8 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     void Start()
     {
         im = GetComponent<Image>();
-        InitialParent = transform.parent;
+        if(!InitialParent)
+            InitialParent = transform.parent;
     }
     public void OnBeginDrag(PointerEventData eventData)
     {

@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class SelectSlot : MonoBehaviour, IDropHandler
 {
-    [SerializeField] private WeaponDrag weaponDragReference;//Não precisava de visualizacao no inspector, so estou fazendo isso por testes
+    [SerializeField] private WeaponDrag weaponDragReference;
     [SerializeField] private Transform playerSlotTransf;
     [SerializeField] private Transform outsideTransf;
     public void OnDrop(PointerEventData eventData)
@@ -16,34 +16,24 @@ public class SelectSlot : MonoBehaviour, IDropHandler
         if (!weaponDragReference)//Se o slot esta vazio
         {
             weaponDragReference = weap;
-            
-            weaponDragReference.WeaponReference.SetParent(playerSlotTransf);
-            weaponDragReference.WeaponReference.localPosition = Vector3.zero;
+
+            SetNewParent(weaponDragReference.WeaponReference, playerSlotTransf);
         }
         else
         {
-            weaponDragReference.WeaponReference.SetParent(outsideTransf);
-            weaponDragReference.WeaponReference.localPosition = Vector3.zero;
+            SetNewParent(weaponDragReference.WeaponReference, outsideTransf);
 
-            weaponDragReference.transform.SetParent(weaponDragReference.InitialParent);
-            weaponDragReference.transform.localPosition = Vector3.zero;
+            SetNewParent(weaponDragReference.transform, weaponDragReference.InitialParent);
 
             weaponDragReference = weap;
-            weaponDragReference.WeaponReference.SetParent(playerSlotTransf);
-            weaponDragReference.WeaponReference.localPosition = Vector3.zero;
+            SetNewParent(weaponDragReference.WeaponReference, playerSlotTransf);
         }
         
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void SetNewParent(Transform thisTransf, Transform newParent)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        thisTransf.SetParent(newParent);
+        thisTransf.localPosition = Vector3.zero;
     }
 }
