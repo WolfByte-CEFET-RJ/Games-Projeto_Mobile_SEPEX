@@ -5,13 +5,27 @@ using UnityEngine.EventSystems;
 
 public class SelectSlot : MonoBehaviour, IDropHandler
 {
+    [Header("DragSettings")]
     [SerializeField] private WeaponDrag weaponDragReference;
+    [Header("TransformSettings")]
     [SerializeField] private Transform playerSlotTransf;
     [SerializeField] private Transform outsideTransf;
-    public void OnDrop(PointerEventData eventData)
+    //[Header("ShopSettings")]
+    private PlayerCoin pCoin;
+
+    void Start()
+    {
+        pCoin = FindObjectOfType<PlayerCoin>();
+    }
+    public void OnDrop(PointerEventData eventData)//
     {
         GameObject dropped = eventData.pointerDrag;
         WeaponDrag weap = dropped.GetComponent<WeaponDrag>();
+        if(weap.IsBought == false)
+        {
+            BuyWeapon(weap.CostOfWeapon);
+            weap.IsBought = true;
+        }
         weap.ParentTransf = transform;
         if (!weaponDragReference)//Se o slot esta vazio
         {
@@ -30,7 +44,11 @@ public class SelectSlot : MonoBehaviour, IDropHandler
         }
         
     }
-
+    void BuyWeapon(int price)
+    {
+        pCoin.SetCoins(price, -1);
+        
+    }
     void SetNewParent(Transform thisTransf, Transform newParent)
     {
         thisTransf.SetParent(newParent);

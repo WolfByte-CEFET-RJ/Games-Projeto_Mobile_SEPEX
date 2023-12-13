@@ -11,9 +11,10 @@ public class PlayerCoin : MonoBehaviour
     [SerializeField] private int criticIncreased;
     private int criticIncrConter;//Outro contador(mesmo motivo do de baixo)
     [SerializeField] private float rangeIncreased;
-    private float rangeIncrConter;//Contador para o quanto já foi incrementado, já que nem todas as armas possiveis podem existir quando o player decidir aumentar o alcance
+    private float rangeIncrConter;//Contador para o quanto já foi incrementado, já que nem todas as armas possiveis podem existir quando o player decidir aumentar o alcance (*)
     private PlayerMove playerMove;
-
+    //(*) Depois de algumas refatoracoes pro inventario funcionar, acredito que esses contadores ja sao desnecessarios. Caso haja necessidade
+    //De otimizar os codigos, posso refatorar esse script daqui.
     private void Start()
     {
         playerMove = gameObject.GetComponent<PlayerMove>();
@@ -28,7 +29,7 @@ public class PlayerCoin : MonoBehaviour
             case 0: IncreaseSpeed(); break;
             case 1: IncreaseCritic(); break;
             case 2: IncreaseRange(); break;
-            default: Debug.LogError("Referencia errada"); break;
+            default: Debug.Log("Comprando nova arma"); break;
         }
 
     }

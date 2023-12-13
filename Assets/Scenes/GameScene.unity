@@ -681,6 +681,7 @@ MonoBehaviour:
   weaponReference: {fileID: 424075449}
   initialParent: {fileID: 0}
   parentVisible: {fileID: 614658331}
+  costOfWeapon: 0
 --- !u!114 &118112653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4468,6 +4469,7 @@ MonoBehaviour:
   weaponReference: {fileID: 424075449}
   initialParent: {fileID: 0}
   parentVisible: {fileID: 614658331}
+  costOfWeapon: 10
 --- !u!114 &812736210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4595,7 +4597,7 @@ GameObject:
   - component: {fileID: 850760507}
   - component: {fileID: 850760506}
   m_Layer: 5
-  m_Name: NailWeapon (2)
+  m_Name: 'RocketWeapon '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4636,6 +4638,7 @@ MonoBehaviour:
   weaponReference: {fileID: 1042924820}
   initialParent: {fileID: 0}
   parentVisible: {fileID: 614658331}
+  costOfWeapon: 20
 --- !u!114 &850760507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5776,6 +5779,7 @@ MonoBehaviour:
   weaponReference: {fileID: 1948162320}
   initialParent: {fileID: 166521613}
   parentVisible: {fileID: 614658331}
+  costOfWeapon: 0
 --- !u!114 &1052494070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7014,7 +7018,7 @@ GameObject:
   - component: {fileID: 1213177415}
   - component: {fileID: 1213177414}
   m_Layer: 5
-  m_Name: NailWeapon (1)
+  m_Name: ClawWeapon (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7055,6 +7059,7 @@ MonoBehaviour:
   weaponReference: {fileID: 299085963}
   initialParent: {fileID: 0}
   parentVisible: {fileID: 614658331}
+  costOfWeapon: 15
 --- !u!114 &1213177415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9985,6 +9990,7 @@ MonoBehaviour:
   weaponReference: {fileID: 78807563}
   initialParent: {fileID: 166521613}
   parentVisible: {fileID: 614658331}
+  costOfWeapon: 0
 --- !u!114 &1576154484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10387,7 +10393,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618938649}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
