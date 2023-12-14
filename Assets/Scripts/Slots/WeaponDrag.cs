@@ -21,6 +21,9 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     //Aqui, temos um obj que esta "por baixo" dos outros objs, permitindo que ele possa estar a frente dos outros
     [Header("ShopSettings")]
     [SerializeField] private int costOfWeapon;
+    [SerializeField] private GameObject lockObj;
+    [SerializeField] private GameObject textError;
+
     private PlayerCoin pCoin;
     public Transform ParentTransf { private get => parentTransf; set => parentTransf = value; }
     public Transform WeaponReference { get => weaponReference;  set => weaponReference = value; }
@@ -41,7 +44,7 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (!IsBought && CostOfWeapon > pCoin.GetCoins())//Se nao tiver dinheiro suficiente
         {
-            //Texto de erro
+            textError.SetActive(true);
             Debug.LogError("Sem dinheiro pra essa arma!!!");
             blockMovement = true;
         }
@@ -76,8 +79,12 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if(blockMovement)
         {
-            //Desaparecer texto de erro
+            textError.SetActive(false);
             blockMovement = false;
+        }
+        else if(lockObj != null && lockObj.activeInHierarchy)
+        {
+            lockObj.SetActive(false);
         }
         im.raycastTarget = true;
         transform.SetParent(ParentTransf);

@@ -21,7 +21,7 @@ public class SelectSlot : MonoBehaviour, IDropHandler
     {
         GameObject dropped = eventData.pointerDrag;
         WeaponDrag weap = dropped.GetComponent<WeaponDrag>();
-        if(weap.IsBought == false)
+        if(weap.IsBought == false)//Se ela ainda nao foi comprada...
         {
             BuyWeapon(weap.CostOfWeapon);
             weap.IsBought = true;

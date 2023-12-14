@@ -10,6 +10,8 @@ public class Shop : MonoBehaviour
     [SerializeField] private Text[] errorTexts;
     [SerializeField][TextArea] private string noMoneyTxt;
     [SerializeField] [TextArea] private string noUpgradeTxt;
+
+    [Space] [SerializeField] private Animator movementAnim;
     // Start is called before the first frame update
     private PlayerCoin coins;
     private void Start()
@@ -80,6 +82,11 @@ public class Shop : MonoBehaviour
             StartCoroutine(ShowErrorTxt(noUpgradeTxt, errorTexts[2], 2));
     }
     private byte[] errorCont = new byte[3];
+
+    public void MoveShop(string animat)
+    {
+        movementAnim.Play(animat);
+    }
     IEnumerator ShowErrorTxt(string txt, Text errorTarget, int index)
     {
         errorTarget.text = txt;
