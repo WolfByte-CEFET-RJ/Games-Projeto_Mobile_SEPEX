@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    Touch touch;
     Image im;
 
     private bool blockMovement;//Booleano que sera responsavel por bloquear o movimento se não tiver dinheiro suficiente
@@ -52,8 +51,6 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         im.raycastTarget = false;
         ParentTransf = transform.parent;
-        if(Input.touchCount > 0)
-            touch = Input.GetTouch(0);
         transform.SetParent(parentVisible);
         //Debug.Log("Começo do drag");
     }
@@ -65,7 +62,8 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
         if(Input.touchCount > 0)//Movimentação das armas pelo celular
         {
-            Vector3 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPos = touch.position;
             touchPos.z = 0f;
             transform.position = touchPos;
         }
