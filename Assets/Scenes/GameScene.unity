@@ -11522,6 +11522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1621092387}
+  - component: {fileID: 1621092388}
   m_Layer: 5
   m_Name: Inventario
   m_TagString: Untagged
@@ -11552,6 +11553,22 @@ RectTransform:
   m_AnchoredPosition: {x: 764, y: -130}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1621092388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621092386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39191688f67b5a4f90124c54b2fdb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSlots:
+  - {fileID: 417173642}
+  - {fileID: 560697596}
+  - {fileID: 1337042573}
 --- !u!1 &1648545277
 GameObject:
   m_ObjectHideFlags: 0

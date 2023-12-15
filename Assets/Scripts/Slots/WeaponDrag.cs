@@ -23,13 +23,16 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     [SerializeField] private GameObject lockObj;
     [SerializeField] private GameObject textError;
 
+    private SelectSlot slotAllocated;
     private PlayerCoin pCoin;
+    #region Atributtes
     public Transform ParentTransf { private get => parentTransf; set => parentTransf = value; }
     public Transform WeaponReference { get => weaponReference;  set => weaponReference = value; }
     public Transform InitialParent { get => initialParent; private set => initialParent = value; }
     public bool IsBought { get => isBought; set => isBought = value; }
     public int CostOfWeapon { get => costOfWeapon; private set => costOfWeapon = value; }
 
+    #endregion
     void Start()
     {
         pCoin = FindObjectOfType<PlayerCoin>();
@@ -88,5 +91,17 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         transform.SetParent(ParentTransf);
         transform.localPosition = Vector3.zero;
         //Debug.Log("Fim do drag");
+
+        //TreatmentSlotAllocated();
+    }
+
+    void TreatmentSlotAllocated()//Metodo com o fim de, caso uma arma seja movida de um selectSlot pra outro, consiga tratar esse caso em 
+    {//Particular, dando ao weaponDragReference do primeiro slot o valor de null
+        if (ParentTransf.GetComponent<SelectSlot>())
+        {
+            if(slotAllocated)
+                slotAllocated.WeaponDragReference = null;          
+            slotAllocated = ParentTransf.GetComponent<SelectSlot>();   
+        }
     }
 }

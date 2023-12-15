@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class SelectSlot : MonoBehaviour, IDropHandler
 {
+    private SelectSlotController controller;
+
     [Header("DragSettings")]
     [SerializeField] private WeaponDrag weaponDragReference;
     [Header("TransformSettings")]
@@ -13,34 +15,39 @@ public class SelectSlot : MonoBehaviour, IDropHandler
     //[Header("ShopSettings")]
     private PlayerCoin pCoin;
 
+    public WeaponDrag WeaponDragReference { get => weaponDragReference; set => weaponDragReference = value; }
+
     void Start()
     {
         pCoin = FindObjectOfType<PlayerCoin>();
+        controller = FindObjectOfType<SelectSlotController>();
     }
-    public void OnDrop(PointerEventData eventData)//
+    public void OnDrop(PointerEventData eventData)
     {
         GameObject dropped = eventData.pointerDrag;
         WeaponDrag weap = dropped.GetComponent<WeaponDrag>();
+        controller.OnChangeWeaponDrag(weap);
         if(weap.IsBought == false)//Se ela ainda nao foi comprada...
         {
             BuyWeapon(weap.CostOfWeapon);
             weap.IsBought = true;
         }
         weap.ParentTransf = transform;
-        if (!weaponDragReference)//Se o slot esta vazio
+        if (!WeaponDragReference)//Se o slot esta vazio
         {
-            weaponDragReference = weap;
+            WeaponDragReference = weap;
 
-            SetNewParent(weaponDragReference.WeaponReference, playerSlotTransf);
+            SetNewParent(WeaponDragReference.WeaponReference, playerSlotTransf);
         }
         else
         {
-            SetNewParent(weaponDragReference.WeaponReference, outsideTransf);
+            SetNewParent(WeaponDragReference.WeaponReference, outsideTransf);
 
-            SetNewParent(weaponDragReference.transform, weaponDragReference.InitialParent);
+            SetNewParent(WeaponDragReference.transform, WeaponDragReference.InitialParent);
 
-            weaponDragReference = weap;
-            SetNewParent(weaponDragReference.WeaponReference, playerSlotTransf);
+            WeaponDragReference = weap;
+            Debug.Log(WeaponDragReference.name);
+            SetNewParent(WeaponDragReference.WeaponReference, playerSlotTransf);
         }
         
     }
