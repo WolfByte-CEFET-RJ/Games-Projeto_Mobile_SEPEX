@@ -46,10 +46,10 @@ public class Weapon : MonoBehaviour
     public void UpgradeRadius(float updt)
     {
         weaponRadius = initialWeaponRad + updt;
-        if(!isRanged)
-        {
+        //if(!isRanged)
+        //{
             transform.localScale = new Vector3(transform.localScale.x + 0.08f, transform.localScale.y + 0.08f, transform.localScale.z + 0.08f);
-        }
+        //}
     }
     public void UpgradeCritic(int updt)
     {

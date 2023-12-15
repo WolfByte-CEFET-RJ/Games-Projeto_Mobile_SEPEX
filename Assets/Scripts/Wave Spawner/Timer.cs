@@ -12,11 +12,21 @@ public class Timer : MonoBehaviour
     public float currentTime;
     [Header("Limit Settings")]
     public float timerLimit;
+    [Header("RangeSettings")]
+    [SerializeField] private Animator[] rangeAnims;
     void Start()
     {
         timerText.color = Color.yellow;
+        
     }
-
+    private void OnEnable()
+    {
+        Debug.LogAssertion("Iniciando Wave");
+        foreach (Animator a in rangeAnims)
+        {
+            a.SetInteger("transition", 0);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +40,10 @@ public class Timer : MonoBehaviour
             currentTime = timerLimit;
             SetTimerText();
             timeOver.Invoke();
+            foreach (Animator a in rangeAnims)
+            {
+                a.SetInteger("transition", 1);
+            }
             enabled = false;
         }
         SetTimerText();
